@@ -1,0 +1,270 @@
+from random import choice
+from time import sleep
+
+
+def quebra():
+    print('''\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n''')
+
+
+def anuncio():
+    print('\033[1;30m')
+    print('                   ------------------------------------------------------------')
+    print('\033[36m')
+    print('{:>58}'.format('SAVE    THE    ROX!'))
+    print('\033[1;30m')
+    print('                   ------------------------------------------------------------')
+
+
+def start():
+    print('''
+                                             _ _ _ _
+                                           /        |
+                                          |       
+                                          |
+                                          |
+                                          |
+    ''')
+
+
+def erro1():
+    print('''
+                                \033[30m             _ _ _ _
+                                \033[30m           /        |
+                                \033[30m          |\033[31m         😁
+                                \033[30m          |
+                                \033[30m          |
+                                \033[30m          |
+''')
+
+
+def erro2():
+    print('''
+                                \033[30m             _ _ _ _
+                                \033[30m           /        |
+                                \033[30m          |\033[31m         😁
+                                \033[30m          |\033[31m         |
+                                \033[30m          |
+                                \033[30m          |
+''')
+
+
+def erro3():
+    print('''
+                                \033[30m             _ _ _ _
+                                \033[30m           /        |
+                                \033[30m          |\033[31m         😰
+                                \033[30m          |\033[31m        /|
+                                \033[30m          |\033[31m         
+                                \033[30m          |\033[31m
+''')
+
+
+def erro4():
+    print('''
+                               \033[30m              _ _ _ _
+                               \033[30m            /        |
+                               \033[30m           |\033[31m         😰   
+                               \033[30m           |\033[31m        /|\\
+                               \033[30m           |\033[31m         
+                               \033[30m           |\033[31m
+''')
+
+
+def erro5():
+    print('''
+                              \033[30m               _ _ _ _
+                              \033[30m             /        |
+                              \033[30m            |\033[31m         😰
+                              \033[30m            |\033[31m        /|\\
+                              \033[30m            |\033[31m        /
+                              \033[30m            |\033[31m         
+''')
+
+
+def erro6():
+    print('''
+                                    \033[30m _ _ _ _
+                                \033[30m   /        |
+                        \033[30m          |\033[30m         💀               \033[36m  Escravo do JP:
+                        \033[30m          |\033[30m        /|\\               \033[30mVocê perdeu! HAHA          
+                        \033[30m          |\033[30m        / \\               \033[36m       🤖
+                        \033[30m          |                          \033[36m      /()\\
+                                                             \033[36m      /  \\
+''')
+
+
+def letrausada():
+    sleep(1)
+    print('''
+
+                                \033[31m Você já usou essa letra!                                     
+                 \033[36m     🤖     \033[31m BOBÃO
+                 \033[36m    /()\\
+                 \033[36m    /  \\
+    
+    ''')
+    print('\033[30m')
+
+
+def vitoria():
+    print('''
+
+
+                               \033[30m              _ _ _ _
+                               \033[30m            /        |
+                               \033[30m           |\033[31m     \033[36m         ROX:                    🤖                     
+                               \033[30m           |\033[31m     \033[30m       Obrigado!                /()\\
+                               \033[30m           |\033[30m        😁                            / \\   
+                               \033[30m           |\033[30m       /|\\                                  
+                                          \033[30m        / \\                                           
+    ''')
+
+
+print('\033[36mEscravo do JP: \033[30mOlá, escolha entre: \033[36m[1] Objetos \033[30m/ \033[36m[2] Animais')
+while True:
+    esc = int(input('\033[30mEscolha: '))
+
+    if esc not in [1, 2]:
+        print('\033[36mEscravo do JP: \033[30mHouve um erro!')
+    else:
+        quebra()
+        break
+
+todo = [['armario', 'computador', 'corrimao', 'escadaria', 'impressora'],
+        ['guaxinim', 'jaguatirica', 'cachorro', 'golfinho', 'camaleao']]
+
+partes = choice(todo[esc - 1])
+resultados = []
+usadas = []
+certas = []
+win = False
+temp = []
+x = []
+
+hide = []
+for gerar in range(0, len(partes)):
+    hide.append('_')
+
+contERROS = 0
+while True:
+    if len(certas) > 2:
+        while True:
+            anuncio()
+            print('\n\n\n\n\n\n')
+            print('\033[30m')
+            yn = str(input('                        Gostaria de chutar a palavra? [\033[32my\033[30m/\033[31mn\033[30m'
+                           ']: ').lower().strip())
+            if yn == 'y':
+                chutar = str(input('                        Palavra: '))
+                if chutar == partes:
+                    print('\033[32m')
+                    print('{:>50}'.format(' VOCÊ GANHOU!'))
+                    vitoria()
+                    exit()
+                else:
+                    quebra()
+                    print('\033[31m')
+                    print('{:>50}'.format('VOCÊ ERROU!'))
+                    contERROS += 1
+                    break
+            elif yn == 'n':
+                break
+            else:
+                print('Houve um erro!')
+    anuncio()
+
+    if esc == 1:
+        print('\033[30m')
+        print('                 Opção escolhida: \033[36m[1] Objetos')
+    elif esc == 2:
+        print('\033[30m')
+        print('                 Opção escolhida: \033[36m[2] Animais')
+
+    print('\033[30m                         Letras usadas: ', end='')
+
+    for item in usadas:
+        print(item, end=' ')
+    print('\n')
+
+    if contERROS == 0:
+        start()
+    elif contERROS == 1:
+        erro1()
+        print('\033[30m')
+    elif contERROS == 2:
+        erro2()
+        print('\033[30m')
+    elif contERROS == 3:
+        erro3()
+        print('\033[30m')
+    elif contERROS == 4:
+        erro4()
+        print('\033[30m')
+    elif contERROS == 5:
+        erro5()
+        print('\033[30m')
+    elif contERROS == 6:
+        erro6()
+        print('\033[30m')
+
+    print('\n\n')
+    print('{:>43}'.format(''), end=' ')
+    for mostrar in hide:
+        print(f'{mostrar}', end='')
+    print('\n\n')
+
+    while True:
+        while True:
+            letra = str(input('{:>47}'.format('letra: ')).lower())
+            if letra not in 'abcdefghijklmnopqrstuvwxyzç':
+                print('\033[31m')
+                print('{:>60}'.format('VOCÊ NÃO DIGITOU UMA LETRA!'))
+                print('\033[30m')
+            else:
+                break
+        if letra not in partes and contERROS < 6 and letra not in usadas:
+            print('\033[31m')
+            print('{:>50}'.format('VOCÊ ERROU!'))
+            print('\033[30m')
+            sleep(1)
+            contERROS += 1
+
+        elif letra in partes and letra not in certas:
+            print('\033[32m')
+            print('{:>50}'.format('VOCÊ ACERTOU!'))
+            sleep(1)
+            certas.append(letra)
+        if letra not in usadas:
+            usadas.append(letra)
+            break
+        elif letra in usadas:
+            letrausada()
+            sleep(1)
+        else:
+            print('\033[31m')
+            print('Houve um erro!')
+    quebra()
+
+    for encontrar, cont in enumerate(partes):
+        if letra in partes[encontrar]:
+            resultados.append(encontrar)
+            hide[encontrar] = letra
+            temp.append(1)
+
+    if contERROS == 6:
+        anuncio()
+        erro6()
+        exit()
+
+    y = len(temp)
+    x.append(y)
+    for elemento in certas:
+        if sum(x) >= len(hide):
+            win = True
+    if win == True:
+        break
+    temp.clear()
+
+anuncio()
+vitoria()
